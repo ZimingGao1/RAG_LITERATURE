@@ -1,7 +1,13 @@
+# streamlit_app.py 或 functions.py 的最顶部
+import sys
+
+__import__("pysqlite3")
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
 import streamlit as st  
 from functions import *
 import base64
+
 
 # Initialize the API key in session state if it doesn't exist
 if 'api_key' not in st.session_state:
