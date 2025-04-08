@@ -1,7 +1,6 @@
 import streamlit as st  
 from functions import *
 import base64
-
 import os
 
 os.environ["CHROMA_SKIP_SQLITE_VERSION_CHECK"] = "1"
@@ -90,6 +89,8 @@ with col1:
             answer = query_document(vectorstore = st.session_state.vector_store, 
                                     query = "Give me the title, summary, publication date, and authors of the research paper.",
                                     api_key = st.session_state.api_key)
-                            
+
             placeholder = st.empty()
             placeholder = st.write(answer)
+
+
