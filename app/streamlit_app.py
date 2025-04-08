@@ -2,6 +2,11 @@ import streamlit as st
 from functions import *
 import base64
 
+import os
+
+os.environ["CHROMA_SKIP_SQLITE_VERSION_CHECK"] = "1"
+
+from chromadb import Client, Settings
 
 # Initialize the API key in session state if it doesn't exist
 if 'api_key' not in st.session_state:
